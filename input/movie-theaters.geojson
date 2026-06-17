@@ -1,0 +1,226 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.121761,
+          59.305294
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Filmstaden Sickla - Marcusplatsen 19, 131 54 Nacka, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.00769917,
+          59.3019595
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Tellus - Vattenledningsvägen 46, 126 33 Hägersten, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.030659,
+          59.315415
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Rio - Hornstulls strand 3, 117 38 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.07416,
+          59.31277
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Victoria - Götgatan 65, 116 21 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.06496943,
+          59.33219285
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Klarabiografen - Sergels Torg 7, 111 57 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.063112,
+          59.334438
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Filmstaden Sergel - Hötorget 3, 111 57 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.067051,
+          59.336057
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Saga - Kungsgatan 24, 111 35 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.068246,
+          59.336074
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Rigoletto - Kungsgatan 16, 111 39 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.068212,
+          59.338578
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Zita - Birger Jarlsgatan 37, 111 39 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.06773953,
+          59.33909607
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Sture - Birger Jarlsgatan 41A, 111 39 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.05949,
+          59.33923
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Grand - Sveavägen 45, 111 34 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.037374,
+          59.340221
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Capitol - Sankt Eriksgatan 82, 113 32 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.08622,
+          59.33792
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Bio Fågel Blå - Skeppargatan 60, 114 59 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.10367,
+          59.33988
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Filmhuset - Borgvägen 1, 115 53 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.003915,
+          59.370914
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Filmstaden Scandinavia - Stjärntorget 2, 169 79 Solna Municipality, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          17.98183506,
+          59.36720782
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Filmstaden Råsunda - Greta Garbos väg 11-13, 169 40 Solna Municipality, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          17.909708,
+          59.268355
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Filmstaden Heron City - Dialoggatan 2, 141 75 Kungens Kurva, Sweden"
+      }
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.07074523,
+          59.31917244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Kungliga Nederländska Ambassaden - Götgatan 16A, 118 46 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.07036597,
+          59.322895
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of India - Sweden & Latvia - Kornhamnstorg 4, 111 27 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.11135692,
+          59.32356986
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Italy - Djurgårdsvägen 174, 115 21 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.0167676,
+          59.32613272
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Russian Embassy in Sweden - Gjörwellsgatan 31, 112 60 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.047482,
+          59.33150681
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Brazil - Kungsgatan 88, 112 27 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.04923437,
+          59.33208324
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Belgian Embassy - Kungsbroplan 2, 112 27 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.0624006,
+          59.33859821
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embajada de México en Suecia - Luntmakargatan 34, 111 37 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.07335579,
+          59.33614649
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Paraguay - Stureplan 4c, 114 35 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.08523474,
+          59.33222718
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Cyperns Ambassad - Styrmansgatan 4, 114 54 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.08593158,
+          59.33263754
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of the Republic of North Macedonia in Sweden - Riddargatan 35, 114 57 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.07952886,
+          59.33857826
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Greece - Kommendörsgatan 16, 114 48 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.07491002,
+          59.3423224
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Colombia - Östermalmsgatan 46, 114 26 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.1055352,
+          59.33367086
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of the United States of America - Dag Hammarskjölds väg 31, 115 27 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.10754002,
+          59.33427827
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "British Embassy - Skarpögatan 6, 115 27 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.10686991,
+          59.33553433
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Finland - Gärdesgatan 9-11, 115 27 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.04225252,
+          59.38511244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Libanons Ambassad - For sending the post, 182 76 Stocksund, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.12239877,
+          59.36205662
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of the State of Eritrea - Stjärnvägen 2, 181 50 Lidingö, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.12715294,
+          59.364904
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of Zimbabwe - Arena 8th Floor, 181 50 Lidingö, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.13259845,
+          59.3710821
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "North Korean Embassy in Sweden - Norra Kungsvägen 39, 181 31 Lidingö, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.0744234,
+          59.34389281
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Embassy of the Czech Republic - Villagatan 21, 114 32 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.048722,
+          59.394543
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Syrian Embassy Sweden
+ - Vendevägen 90, 182 32 Danderyd Municipality, Sweden"
+      }
+    }
+  ]
+}

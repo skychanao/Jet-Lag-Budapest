@@ -1,0 +1,57 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.1058559,
+          59.3263233
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Skansen - Djurgårdsslätten 49-51, 115 21 Stockholm, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          17.96937914,
+          59.30797899
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Eolshälls 4H - Eolshällsvägen 10, 129 37 Hägersten, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          17.911113,
+          59.412361
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Akalla 4H farm - Akalla By 4, 164 78 Kista, Sweden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          17.99694652,
+          59.34504443
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Augustendals 4H-Klubb - Huvudstagatan 21, 171 73 Solna Municipality, Sweden"
+      }
+    }
+  ]
+}
