@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_geolocation import streamlit_geolocation
+import pandas as pd
 
 from utils import read_coord, get_poi_data
 
@@ -117,7 +118,13 @@ def streamlit_features():
                 if selected_category != "Municipality" and selected_category != "District":
                     poi_names = poi_gdf['label'].tolist()
                 else:
-                    poi_names = poi_gdf['name'].tolist()
+                    if 'ref' in poi_gdf.columns:
+                        # Convert ref to numeric for proper numerical sorting (so 2 comes before 10)
+                        ref_numeric = pd.to_numeric(poi_gdf['ref'], errors='coerce')
+                        sorted_gdf = poi_gdf.loc[ref_numeric.sort_values(na_position='last').index]
+                        poi_names = sorted_gdf['name'].tolist()
+                    else:
+                        poi_names = poi_gdf['name'].tolist()
 
                 selected_poi = st.selectbox("Your Closest/Current POI", poi_names)
                 matching_type = st.radio("Result", ["Same", "Different"])
