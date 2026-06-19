@@ -57,7 +57,6 @@ def admin1(m):
         control=False
     ).add_to(m)
 
-
 def admin2(m):
     raw_districts = gpd.read_file(SCRIPT_FOLDER / "admin2.geojson")
     districts = clean_geometry(raw_districts)
@@ -101,7 +100,7 @@ def train(m):
     train_lines = clean_geometry(raw_train_lines)
 
     #reduce length of tram line names 
-    train_lines['name'] = train_lines['name'].str.split(':').str[0].str.strip()
+    # train_lines['name'] = train_lines['name'].str.split(':').str[0].str.strip()
     st.session_state.poi_data["Train Line"] = train_lines
 
 
@@ -114,19 +113,33 @@ def train(m):
                 'opacity': 0.8,
                 'dashArray': '10, 10'
         },
-        tooltip=folium.GeoJsonTooltip(
-            fields = ['name'],
-            labels = False
-        ),
-        show = True
+        # tooltip=folium.GeoJsonTooltip(
+        #     fields = ['name'],
+        #     labels = False
+        # ),
+        show = False
     ).add_to(m)
 
 def M_lines(m):
     raw_metro_lines = gpd.read_file(SCRIPT_FOLDER / "metro-lines.geojson")
     metro_lines = clean_geometry(raw_metro_lines)
 
-    #reduce length of metro line names
-    metro_lines['name'] = metro_lines['name'].str[:13]
+    #Color mapping of metro lines
+    budapest_colors = {
+        "M1": "gold",    # Millennium Underground
+        "M2": "red",
+        "M3": "blue",
+        "M4": "green"
+    }
+    def map_metro_color(row):
+        ref = str(row.get('ref', ''))
+        name = str(row.get('name', ''))
+        for line_id, color in budapest_colors.items():
+            if line_id in ref or line_id in name:
+                return color
+        return "#555555" # Default gray if no match
+    metro_lines['colour'] = metro_lines.apply(map_metro_color, axis=1)
+
     metro_layer = folium.FeatureGroup(name="Metro Lines")
     #plot metro lines
     folium.GeoJson(
@@ -137,7 +150,7 @@ def M_lines(m):
                 'width': 1
         },
         tooltip=folium.GeoJsonTooltip(
-            fields = ['name'],
+            fields = ['ref'],
             labels = False
         ),
         show = True
@@ -147,23 +160,23 @@ def M_lines(m):
 
 def T_lines(m):
     raw_TLines = gpd.read_file(SCRIPT_FOLDER / "tram-lines.geojson")
-    tram_lines = clean_geometry(raw_TLines[['name','geometry','colour']])
+    tram_lines = clean_geometry(raw_TLines)
 
     #reduce length of tram line names 
-    tram_lines['name'] = tram_lines['name'].str.split(':').str[0].str.strip()
+    # tram_lines['name'] = tram_lines['name'].str.split(':').str[0].str.strip()
 
     #plot tram lines
     folium.GeoJson(
         tram_lines,
         name = "Tram Lines",
         style_function=lambda feature: {
-            'color': feature['properties'].get('colour', '#555555'),
+            'color': feature['properties'].get('colour', '#f2d004'),
             'width': 1
         },
-        tooltip=folium.GeoJsonTooltip(
-            fields = ['name'],
-            labels = False
-        ),
+        # tooltip=folium.GeoJsonTooltip(
+        #     fields = ['name'],
+        #     labels = False
+        # ),
         show = True
     ).add_to(m)
 

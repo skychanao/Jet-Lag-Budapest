@@ -7,6 +7,10 @@ def clean_geometry(gdf):
     gdf = gdf.dropna(subset=['geometry'])
     supported_shapes = ['Point', 'MultiPoint', 'LineString', 'MultiLineString', 'Polygon', 'MultiPolygon']
     gdf = gdf[gdf.geometry.type.isin(supported_shapes)]
+    # Convert datetime columns to string to avoid JSON serialization errors
+    for col in gdf.select_dtypes(include=['datetime', 'datetimetz']).columns:
+        gdf[col] = gdf[col].astype(str)
+
     return gdf
 
 def read_coord(coord):

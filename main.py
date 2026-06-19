@@ -62,9 +62,9 @@ class JetLagApp:
         admin1(m)
         admin2(m)
         # coastline(m)
-        # train(m)
-        # M_lines(m)
-        # T_lines(m)
+        train(m)
+        M_lines(m)
+        T_lines(m)
         # stations(m)
 
         # Point of Interest for Seeking
