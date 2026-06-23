@@ -65,7 +65,7 @@ class JetLagApp:
         train(m)
         M_lines(m)
         T_lines(m)
-        # stations(m)
+        stations(m)
 
         # Point of Interest for Seeking
         # parks(m)
@@ -92,7 +92,7 @@ class JetLagApp:
         Draw(export=False).add_to(m)
 
         # Render Map in Streamlit
-        st_folium(m, use_container_width=True)
+        st_folium(m, use_container_width=True, returned_objects=[])
 
 if __name__ == "__main__":
     app = JetLagApp()

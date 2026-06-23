@@ -7,27 +7,24 @@ from shapely.geometry import Polygon
 from config import SCRIPT_FOLDER
 from utils import clean_geometry
 
-def admin1(m):
-    #read Stockholm json data
+@st.cache_data
+def load_admin1_data():
     raw_municialities = gpd.read_file(SCRIPT_FOLDER / "admin1.geojson")
-
-    #clean up data
     municipalities = clean_geometry(raw_municialities[['name', 'geometry']])
-    # Filter to only keep Polygon and MultiPolygon geometries for overlay mapping
     municipalities = municipalities[municipalities.geometry.type.isin(['Polygon', 'MultiPolygon'])]
-    st.session_state.poi_data["Municipality"] = municipalities
-
-    #build a GeoDataFrame with the cleaned data
     game_area = gpd.GeoDataFrame(municipalities, crs="EPSG:4326")
-    st.session_state.game_area = game_area
-
-    #Create a mask, which plots world_borer - game_area,
+    
     world_border = [[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]]
     world_poly = Polygon(world_border)
     world_gdf = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[world_poly])
     mask_gdf = gpd.overlay(world_gdf, game_area, how='difference')
-    
-    #Add the masked layers to the map
+    return municipalities, game_area, mask_gdf
+
+def admin1(m):
+    municipalities, game_area, mask_gdf = load_admin1_data()
+    st.session_state.poi_data["Municipality"] = municipalities
+    st.session_state.game_area = game_area
+
     folium.GeoJson(
         mask_gdf,
         name="Out of Bounds",
@@ -40,7 +37,6 @@ def admin1(m):
         control=False
     ).add_to(m)
     
-    #Add boundaries of municipalities to the map
     folium.GeoJson(
         game_area,
         name= "Municipalities",
@@ -57,9 +53,13 @@ def admin1(m):
         control=False
     ).add_to(m)
 
-def admin2(m):
+@st.cache_data
+def load_admin2_data():
     raw_districts = gpd.read_file(SCRIPT_FOLDER / "admin2.geojson")
-    districts = clean_geometry(raw_districts)
+    return clean_geometry(raw_districts)
+
+def admin2(m):
+    districts = load_admin2_data()
     st.session_state.poi_data["District"] = districts
 
     folium.GeoJson(
@@ -77,13 +77,19 @@ def admin2(m):
         show = True
     ).add_to(m)
 
-def coastline(m):
+@st.cache_data
+def load_coastline_data():
     raw_coastlines = gpd.read_file(SCRIPT_FOLDER / "coastlines.geojson")
-    game_area = st.session_state.game_area
+    _, game_area, _ = load_admin1_data()
     coastlines = gpd.clip(clean_geometry(raw_coastlines), game_area)
+    # Simplify coastline to reduce points and improve map rendering time
+    coastlines['geometry'] = coastlines['geometry'].simplify(tolerance=0.0005)
+    return coastlines
+
+def coastline(m):
+    coastlines = load_coastline_data()
     st.session_state.poi_data["Coastline"] = coastlines
 
-    #Plot coastlines on the map
     folium.GeoJson(
         coastlines,
         name="Coastline",
@@ -95,16 +101,15 @@ def coastline(m):
         show=False
     ).add_to(m)
 
-def train(m):
+@st.cache_data
+def load_train_data():
     raw_train_lines = gpd.read_file(SCRIPT_FOLDER / "train.geojson")
-    train_lines = clean_geometry(raw_train_lines)
+    return clean_geometry(raw_train_lines)
 
-    #reduce length of tram line names 
-    # train_lines['name'] = train_lines['name'].str.split(':').str[0].str.strip()
+def train(m):
+    train_lines = load_train_data()
     st.session_state.poi_data["Train Line"] = train_lines
 
-
-    #plot train lines
     folium.GeoJson(
         train_lines,
         name = "Train lines",
@@ -113,20 +118,16 @@ def train(m):
                 'opacity': 0.8,
                 'dashArray': '10, 10'
         },
-        # tooltip=folium.GeoJsonTooltip(
-        #     fields = ['name'],
-        #     labels = False
-        # ),
         show = False
     ).add_to(m)
 
-def M_lines(m):
+@st.cache_data
+def load_M_lines_data():
     raw_metro_lines = gpd.read_file(SCRIPT_FOLDER / "metro-lines.geojson")
     metro_lines = clean_geometry(raw_metro_lines)
 
-    #Color mapping of metro lines
     budapest_colors = {
-        "M1": "gold",    # Millennium Underground
+        "M1": "gold",
         "M2": "red",
         "M3": "blue",
         "M4": "green"
@@ -137,11 +138,13 @@ def M_lines(m):
         for line_id, color in budapest_colors.items():
             if line_id in ref or line_id in name:
                 return color
-        return "#555555" # Default gray if no match
+        return "#555555"
     metro_lines['colour'] = metro_lines.apply(map_metro_color, axis=1)
+    return metro_lines
 
+def M_lines(m):
+    metro_lines = load_M_lines_data()
     metro_layer = folium.FeatureGroup(name="Metro Lines")
-    #plot metro lines
     folium.GeoJson(
         metro_lines,
         name = "Metro Lines",
@@ -155,17 +158,15 @@ def M_lines(m):
         ),
         show = True
     ).add_to(metro_layer)
-    
     metro_layer.add_to(m)
 
-def T_lines(m):
+@st.cache_data
+def load_T_lines_data():
     raw_TLines = gpd.read_file(SCRIPT_FOLDER / "tram-lines.geojson")
-    tram_lines = clean_geometry(raw_TLines)
+    return clean_geometry(raw_TLines)
 
-    #reduce length of tram line names 
-    # tram_lines['name'] = tram_lines['name'].str.split(':').str[0].str.strip()
-
-    #plot tram lines
+def T_lines(m):
+    tram_lines = load_T_lines_data()
     folium.GeoJson(
         tram_lines,
         name = "Tram Lines",
@@ -173,39 +174,34 @@ def T_lines(m):
             'color': feature['properties'].get('colour', '#f2d004'),
             'width': 1
         },
-        # tooltip=folium.GeoJsonTooltip(
-        #     fields = ['name'],
-        #     labels = False
-        # ),
         show = True
     ).add_to(m)
 
-def stations(m):
-    game_area = st.session_state.game_area
-    #read data from GeoJson
+@st.cache_data
+def load_stations_data():
+    _, game_area, _ = load_admin1_data()
     raw_Tstations = gpd.read_file(SCRIPT_FOLDER / "tram-stations.geojson")
     raw_Mstations = gpd.read_file(SCRIPT_FOLDER / "metro-stations.geojson")
 
-    #extract name and geometry of unique tram stations 
     tram_stations = clean_geometry(raw_Tstations[['name','geometry']].drop_duplicates(subset=['name']))
-    #only select stations within the game area
     tram_stations = gpd.clip(tram_stations, game_area)
-    #select starting tram stations of the game
-    start_T = tram_stations[tram_stations['name'] == "T-Centralen"][['name','geometry']]
-    #remove starting tram stations from other tram stations
+
+    start_T = tram_stations[tram_stations['name'] == "Deák Ferenc tér"][['name','geometry']]
     tram_stations = tram_stations[~tram_stations['name'].isin(start_T['name'])]
 
-    #extract name and geometry of unique metro stations 
     metro_stations = clean_geometry(raw_Mstations[['name','geometry']].drop_duplicates(subset=['name']))
-    #only select stations within the game area
     metro_stations = gpd.clip(metro_stations, game_area)
-    #select starting metro stations of the game
-    start_M = metro_stations[metro_stations['name'] == "T-Centralen"][['name','geometry']]
-    #remove starting tram stations from other tram stations
+    
+    start_M = metro_stations[metro_stations['name'] == "Deák Ferenc tér"][['name','geometry']]
     metro_stations = metro_stations[~metro_stations['name'].isin(start_M['name'])]
 
-    #plot starting points
     start = pd.concat([start_M,start_T])
+    all_station = pd.concat([metro_stations,tram_stations,start])
+    
+    return tram_stations, metro_stations, start, all_station
+
+def stations(m):
+    tram_stations, metro_stations, start, all_station = load_stations_data()
 
     folium.GeoJson(
         start,
@@ -223,7 +219,6 @@ def stations(m):
         show = True
     ).add_to(m)
     
-    #plot stations with metro
     folium.GeoJson(
         metro_stations,
         name = "Metro Stations",
@@ -240,7 +235,6 @@ def stations(m):
         show = False
     ).add_to(m)
 
-    #plot stations with tram
     folium.GeoJson(
         tram_stations,
         name = "Tram Stations",
@@ -257,8 +251,6 @@ def stations(m):
         show = False
     ).add_to(m)
     
-    # plop hiding zones
-    all_station = pd.concat([metro_stations,tram_stations,start])
     hiding_zone = folium.FeatureGroup(name="Hiding Zone", show=False)
 
     for idx, row in all_station.iterrows():

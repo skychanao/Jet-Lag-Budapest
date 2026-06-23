@@ -149,7 +149,9 @@ def streamlit_features():
             coordinate = st.text_input(label = "Coordinate", placeholder = "lat, lon (eg: 59.0, 18.0)",key="coord_measure")
             
             #Read Measuring question
-            categories_measuring = ["Train Line","Coastline","Park","Amusement Park", "Zoo","Aquarium","Golf Course","Museum",
+            categories_measuring = ["Train Line",
+            #"Coastline",
+            "Park","Amusement Park", "Zoo","Aquarium","Golf Course","Museum",
                 "Movie Theater", "Hospital", "Library","Consluate"]
             selected_category = st.pills("Question", options = categories_measuring, key="measure_cat")
             measuring_type = st.radio("Result", ["Closer", "Further"])
