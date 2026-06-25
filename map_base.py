@@ -3,6 +3,7 @@ import geopandas as gpd
 import folium
 import streamlit as st
 from shapely.geometry import Polygon
+import folium.plugins
 
 from config import SCRIPT_FOLDER
 from utils import clean_geometry
@@ -14,10 +15,21 @@ def load_admin1_data():
     municipalities = municipalities[municipalities.geometry.type.isin(['Polygon', 'MultiPolygon'])]
     game_area = gpd.GeoDataFrame(municipalities, crs="EPSG:4326")
     
-    world_border = [[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]]
+    minx, miny, maxx, maxy = game_area.total_bounds
+    pad = 10.0 # 10 degree padding is enough to cover the visible map when zoomed out
+    world_border = [
+        [minx - pad, miny - pad],
+        [minx - pad, maxy + pad],
+        [maxx + pad, maxy + pad],
+        [maxx + pad, miny - pad],
+        [minx - pad, miny - pad]
+    ]
     world_poly = Polygon(world_border)
     world_gdf = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[world_poly])
-    mask_gdf = gpd.overlay(world_gdf, game_area, how='difference')
+    
+    # Dissolve game area into a single polygon to prevent masking glitches
+    game_area_dissolved = game_area.assign(dummy=1).dissolve(by='dummy')
+    mask_gdf = gpd.overlay(world_gdf, game_area_dissolved, how='difference')
     return municipalities, game_area, mask_gdf
 
 def admin1(m):
@@ -188,6 +200,18 @@ def load_stations_data():
 
     start_T = tram_stations[tram_stations['name'] == "Deák Ferenc tér"][['name','geometry']]
     tram_stations = tram_stations[~tram_stations['name'].isin(start_T['name'])]
+
+    # Filter out tram stations that are too close to each other (less than 500m) to reduce overlap
+    tram_proj = tram_stations.to_crs(epsg=32634)
+    to_drop = set()
+    for i, row in tram_proj.iterrows():
+        if i in to_drop:
+            continue
+        dists = tram_proj.geometry.distance(row.geometry)
+        close = dists[(dists < 500) & (dists.index != i)].index
+        to_drop.update(close)
+    
+    tram_stations = tram_stations.drop(list(to_drop))
 
     metro_stations = clean_geometry(raw_Mstations[['name','geometry']].drop_duplicates(subset=['name']))
     metro_stations = gpd.clip(metro_stations, game_area)

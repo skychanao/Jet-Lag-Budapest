@@ -109,7 +109,9 @@ def streamlit_features():
 
         # Matching Tab
         with tab_matching:
-            categories_matching = ["Municipality","District","Park","Amusement Park", "Zoo","Aquarium","Golf Course","Museum",
+            categories_matching = ["Municipality","District","Park","Amusement Park", "Zoo",
+            #"Aquarium",
+            "Golf Course","Museum",
                             "Movie Theater", "Hospital", "Library","Consluate"]
             selected_category = st.pills("Question", options = categories_matching)
 
@@ -151,7 +153,9 @@ def streamlit_features():
             #Read Measuring question
             categories_measuring = ["Train Line",
             #"Coastline",
-            "Park","Amusement Park", "Zoo","Aquarium","Golf Course","Museum",
+            "Park","Amusement Park", "Zoo",
+            #"Aquarium",
+            "Golf Course","Museum",
                 "Movie Theater", "Hospital", "Library","Consluate"]
             selected_category = st.pills("Question", options = categories_measuring, key="measure_cat")
             measuring_type = st.radio("Result", ["Closer", "Further"])

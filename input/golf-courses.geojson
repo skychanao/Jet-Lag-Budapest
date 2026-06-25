@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.98720318,
+          47.41738345
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Highland Golf Club - 1224 Budapest, Dózsa György út 99-103, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.14377969,
+          47.41351012
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "St. Lőrinc Golf Club - 1238 Budapest, Szentlőrinci út 195853, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.026981,
+          47.54401
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Continental Citygolf Club - 1037 Budapest, Perényi út 6, Hungary"
+      }
+    }
+  ]
+}

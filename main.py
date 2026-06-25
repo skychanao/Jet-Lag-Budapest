@@ -69,10 +69,10 @@ class JetLagApp:
 
         # Point of Interest for Seeking
         # parks(m)
-        # amusementParks(m)
-        # zoo(m)
+        amusementParks(m)
+        zoo(m)
         # aquarium(m)
-        # golf(m)
+        golf(m)
         # museum(m)
         # theaters(m)
         # hospitals(m)

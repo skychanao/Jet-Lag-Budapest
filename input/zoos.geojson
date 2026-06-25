@@ -1,0 +1,57 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.07195255,
+          47.56151306
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Népszigeti Állatkert - 1138 Budapest, Népsziget(Állatpark, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.05031307,
+          47.52605328
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Margaret Island Mini Zoo - 1007 Budapest, Margitsziget, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.07918699,
+          47.5196239
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Fővárosi Állat- és Növénykert - 1146 Budapest, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          18.965803,
+          47.495293
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Piczinke Póni Udvar - 1121 Budapest, Konkoly-Thege Miklós út 20, Hungary"
+      }
+    }
+  ]
+}

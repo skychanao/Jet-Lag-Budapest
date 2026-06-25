@@ -9,8 +9,9 @@ from shapely.ops import unary_union, voronoi_diagram
 from utils import get_poi_data
 
 def voronoi(gdf):
+    world_border = MultiPoint([(-90,-90), (90,-90),(-90,90),(90,90)]).envelope
     multipoint = MultiPoint(gdf.geometry.values)
-    voronoi_collection = voronoi_diagram(multipoint)
+    voronoi_collection = voronoi_diagram(multipoint, envelope=world_border)
 
     # Create a GeoDataFrame with the Voronoi polygons:
     voronoi_gdf = gpd.GeoDataFrame(geometry=list(voronoi_collection.geoms), crs='EPSG:4326')

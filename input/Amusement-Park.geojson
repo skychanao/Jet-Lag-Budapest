@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.146936,
+          47.462039
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "DinoPark KÖKI Budapest - 1191 Budapest, Vak Bottyán u. 75, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.05574634,
+          47.43229651
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Skyward Indoor Skydiving Budapest - 1211 Budapest, Szérűraktár u. 53, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.13727848,
+          47.49738797
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Kincsem Honvédelmi Park - 1106 Budapest, Fehér út, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.09027407,
+          47.48246897
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Orczy Adventure Park - 1089 Budapest, Orczy Kert, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.110454,
+          47.57251
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Tarzan Park - 1046 Budapest, Tábor u. 26-28, Hungary"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          19.1112383,
+          47.60043616
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "label": "Aquaworld Aquapark - 1044 Budapest, Íves út, Hungary"
+      }
+    }
+  ]
+}
