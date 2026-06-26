@@ -68,16 +68,16 @@ class JetLagApp:
         stations(m)
 
         # Point of Interest for Seeking
-        # parks(m)
+        parks(m)
         amusementParks(m)
         zoo(m)
         # aquarium(m)
         golf(m)
-        # museum(m)
-        # theaters(m)
-        # hospitals(m)
-        # libraries(m)
-        # consulates(m)
+        museum(m)
+        theaters(m)
+        hospitals(m)
+        libraries(m)
+        consulates(m)
 
         # Seeking Tools
         draw_seeking_tools(m)

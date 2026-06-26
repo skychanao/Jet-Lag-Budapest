@@ -6,7 +6,7 @@ from shapely.geometry import Polygon
 import folium.plugins
 
 from config import SCRIPT_FOLDER
-from utils import clean_geometry
+from utils import clean_geometry, filter_close_stations
 
 @st.cache_data
 def load_admin1_data():
@@ -202,16 +202,7 @@ def load_stations_data():
     tram_stations = tram_stations[~tram_stations['name'].isin(start_T['name'])]
 
     # Filter out tram stations that are too close to each other (less than 500m) to reduce overlap
-    tram_proj = tram_stations.to_crs(epsg=32634)
-    to_drop = set()
-    for i, row in tram_proj.iterrows():
-        if i in to_drop:
-            continue
-        dists = tram_proj.geometry.distance(row.geometry)
-        close = dists[(dists < 500) & (dists.index != i)].index
-        to_drop.update(close)
-    
-    tram_stations = tram_stations.drop(list(to_drop))
+    tram_stations = filter_close_stations(tram_stations, min_dist_m=500)
 
     metro_stations = clean_geometry(raw_Mstations[['name','geometry']].drop_duplicates(subset=['name']))
     metro_stations = gpd.clip(metro_stations, game_area)

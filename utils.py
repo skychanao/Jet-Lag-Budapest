@@ -30,3 +30,19 @@ def get_poi_data(category_name):
         return None
     if category_name in st.session_state.poi_data:
         return st.session_state.poi_data[category_name]
+
+def filter_close_stations(stations_gdf, min_dist_m=500):
+    """Filter out stations that are too close to each other (less than min_dist_m) to reduce overlap."""
+    if stations_gdf.empty:
+        return stations_gdf
+        
+    proj = stations_gdf.to_crs(epsg=32634)
+    to_drop = set()
+    for i, row in proj.iterrows():
+        if i in to_drop:
+            continue
+        dists = proj.geometry.distance(row.geometry)
+        close = dists[(dists < min_dist_m) & (dists.index != i)].index
+        to_drop.update(close)
+    
+    return stations_gdf.drop(list(to_drop))

@@ -1,0 +1,161 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.067355,
+                    47.495609
+                ]
+            },
+            "properties": {
+                "label": "Szent Rókus Hospital - 1085 Budapest, Gyulai Pál u. 2, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.064276,
+                    47.524232
+                ]
+            },
+            "properties": {
+                "label": "Medicare Zrt. - 1134 Budapest, Váci út 29, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.069631,
+                    47.474669
+                ]
+            },
+            "properties": {
+                "label": "Duna Medical Center - 1095 Budapest, Lechner Ödön fasor 5, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.10127,
+                    47.467624
+                ]
+            },
+            "properties": {
+                "label": "Dél-pesti Centrumkórház Országos Hematológiai és Infektológiai Intézet Merényi Gusztáv Kórház Telephely - 1097 Budapest, Gyáli út 17-19, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.064495,
+                    47.524117
+                ]
+            },
+            "properties": {
+                "label": "Medicover Hospital and Advanced Diagnostic Center - 1134 Budapest, Váci út 29-31, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.03642,
+                    47.524314
+                ]
+            },
+            "properties": {
+                "label": "Szent Magdolna Private Hospital - 1023 Budapest, Zsigmond tér 10, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.013308,
+                    47.507284
+                ]
+            },
+            "properties": {
+                "label": "Semmelweis University Heart Center - 1122 Budapest, Városmajor u. 68, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.034637,
+                    47.468622
+                ]
+            },
+            "properties": {
+                "label": "Szent Imre Hospital - 1115 Budapest, Tétényi út 12--16, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.161138,
+                    47.478001
+                ]
+            },
+            "properties": {
+                "label": "Bajcsy-Zsilinszky Hospital - 1104 Budapest, Maglódi út 89-91, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.078484,
+                    47.501601
+                ]
+            },
+            "properties": {
+                "label": "Péterfy Sándor Utcai Kórház Rendelőintézet - 1076 Budapest, Péterfy Sándor utca 8-20, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.030236,
+                    47.539842
+                ]
+            },
+            "properties": {
+                "label": "Saint Margaret Hospital - 1037 Budapest, Bécsi út 132, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.975662,
+                    47.526907
+                ]
+            },
+            "properties": {
+                "label": "Szent Ferenc Hospital - 1021 Budapest, Széher út 73, Hungary"
+            }
+        }
+    ]
+}

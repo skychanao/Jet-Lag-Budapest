@@ -1,0 +1,226 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.06357253,
+                    47.46557472
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Kopaszi Damm - 1117 Budapest, Kopaszi-gát 2, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.03323165,
+                    47.46509614
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Bikás park - 1119 Budapest, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.0332129,
+                    47.47675061
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Independence Park - 1113 Budapest, Bocskai út 64, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.0465932,
+                    47.48537204
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Gellért-hegy Jubileumi park - 1118 Budapest, Verejték u. 2, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.05600986,
+                    47.49667902
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Városháza park - 1052 Budapest, Károly krt., Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.08037623,
+                    47.47568086
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Játszótér Haller park - 1096 Budapest, Haller u. 23, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.10872215,
+                    47.47913634
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Park Népliget - 1101 Budapest, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.08204129,
+                    47.51532229
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "City Park - 1146 Budapest, Kós Károly stny. 1, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.06222449,
+                    47.53187901
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Vizafogó park - 1138 Budapest, Párkány u. 39-41, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.14465847,
+                    47.47980544
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Óhegy park - 1103 Budapest, Óhegy u., Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.13507266,
+                    47.48699312
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Rottenbiller park - 1105 Budapest, Rottenbiller park, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.05065785,
+                    47.51842753
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Szent István park - 1137 Budapest, Szent István park, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.0462678,
+                    47.52114603
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Gulliver Park - 1007 Budapest, Gasztro Sétány 1, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.02502554,
+                    47.51213987
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Millenáris parkoló - 1024 Budapest, Kis Rókus u. 16-20, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.03259952,
+                    47.5167391
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Mansfeld Péter Park - 1023 Budapest, Veronika u. 6, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.01756929,
+                    47.50780445
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Városmajor park - 1122 Budapest, Szilágyi Erzsébet fasor, Hungary"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    19.072218,
+                    47.60458
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "label": "Pünkösdfürdő Park - 1039 Budapest, Kossuth Lajos üdülőpart 136, Hungary"
+            }
+        }
+    ]
+}

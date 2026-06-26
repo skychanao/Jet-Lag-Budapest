@@ -10,7 +10,7 @@ from shapely.ops import voronoi_diagram
 from shapely.geometry import MultiPoint
 
 from config import SCRIPT_FOLDER
-from utils import clean_geometry
+from utils import clean_geometry, filter_close_stations
 
 
 
@@ -54,16 +54,16 @@ def main():
     stations(m)
 
 
-    # parks(m)
+    parks(m)
     amusementParks(m)
     zoo(m)
     # aquarium(m)
     golf(m)
-    # museum(m)
-    # theaters(m)
-    # hospitals(m)
-    # libraries(m)
-    # consulates(m)
+    museum(m)
+    theaters(m)
+    hospitals(m)
+    libraries(m)
+    consulates(m)
 
     #Add location request
     folium.plugins.LocateControl(auto_start=False).add_to(m)
@@ -267,6 +267,9 @@ def stations(m):
     start_T = tram_stations[tram_stations['name'] == "Deák Ferenc tér"][['name','geometry']]
     #remove starting tram stations from other tram stations
     tram_stations = tram_stations[~tram_stations['name'].isin(start_T['name'])]
+
+    # Filter out tram stations that are too close to each other (less than 500m) to reduce overlap
+    tram_stations = filter_close_stations(tram_stations, min_dist_m=500)
 
     #extract name and geometry of unique metro stations 
     metro_stations = raw_Mstations[['name','geometry']].drop_duplicates(subset=['name'])
