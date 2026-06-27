@@ -162,7 +162,7 @@ def M_lines(m):
         name = "Metro Lines",
             style_function=lambda feature: {
                 'color': feature['properties'].get('colour', '#555555'),
-                'width': 1
+                'weight': 1
         },
         tooltip=folium.GeoJsonTooltip(
             fields = ['ref'],
@@ -183,8 +183,8 @@ def T_lines(m):
         tram_lines,
         name = "Tram Lines",
         style_function=lambda feature: {
-            'color': feature['properties'].get('colour', '#e37c07'),
-            'width': 1
+            'color': '#e37c07',
+            'weight': 1
         },
         show = True
     ).add_to(m)
