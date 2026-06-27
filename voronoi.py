@@ -53,7 +53,7 @@ def main():
     T_lines(m)
     stations(m)
 
-
+    reachable(m)
     parks(m)
     amusementParks(m)
     zoo(m)
@@ -84,6 +84,19 @@ def main():
 # =============================
 # BASE MAP FEATURES
 # =============================
+
+def reachable(m):
+    game_area = clean_geometry(gpd.read_file(SCRIPT_FOLDER / "reachable.geojson"))
+    folium.GeoJson(
+        game_area,
+        name = "Playable area",
+            style_function=lambda feature: {
+                'color':"#3ae868",
+                'opacity': 0.8
+        },
+        show = True,
+        control=True
+    ).add_to(m)
 
 def municipalities(m):
     raw_municialities = clean_geometry(gpd.read_file(SCRIPT_FOLDER / "admin1.geojson"))
@@ -247,7 +260,7 @@ def T_lines(m):
         raw_TLines,
         name = "Tram Lines",
         style_function=lambda feature: {
-            'color': feature['properties'].get('colour', '#f2d004'),
+            'color': feature['properties'].get('colour', '#e37c07'),
             'width': 1
         },
         show = True

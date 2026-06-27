@@ -183,7 +183,7 @@ def T_lines(m):
         tram_lines,
         name = "Tram Lines",
         style_function=lambda feature: {
-            'color': feature['properties'].get('colour', '#f2d004'),
+            'color': feature['properties'].get('colour', '#e37c07'),
             'width': 1
         },
         show = True
