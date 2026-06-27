@@ -94,7 +94,7 @@ def reachable(m):
                 'color':"#3ae868",
                 'opacity': 0.8
         },
-        show = True,
+        show = False,
         control=True
     ).add_to(m)
 
