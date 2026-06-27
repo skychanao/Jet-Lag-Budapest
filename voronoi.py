@@ -259,8 +259,7 @@ def T_lines(m):
         raw_TLines,
         name = "Tram Lines",
         style_function=lambda feature: {
-            'color': '#e37c07',
-            
+            'color': '#e37c07'
         },
         show = True
     ).add_to(m)
